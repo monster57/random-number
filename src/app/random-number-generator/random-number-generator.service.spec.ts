@@ -18,4 +18,9 @@ describe('RandomNumberGeneratorService', () => {
     expect(service.getRandomNumber()).toBeGreaterThan(0);
     expect(service.getRandomNumber()).toBeLessThan(100);
   });
+
+  it('should generate total 4 random numbers', () => {
+    expect(service.getRandomNumberArray(4).length).toEqual(4);
+  });
+  
 });
