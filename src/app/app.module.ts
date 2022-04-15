@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { RandomNumberGeneratorModule } from './random-number-generator/random-number-generator.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { MatSliderModule } from '@angular/material/slider';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    RandomNumberGeneratorModule
+    RandomNumberGeneratorModule,
+    FormsModule
 
   ],
   providers: [],
