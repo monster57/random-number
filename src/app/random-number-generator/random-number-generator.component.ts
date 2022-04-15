@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RandomNumberGeneratorService } from './random-number-generator.service';
 
 @Component({
   selector: 'random-number-generator',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./random-number-generator.component.css']
 })
 export class RandomNumberGeneratorComponent implements OnInit {
-
-  constructor() { }
+  randomNumberSet:any = [];
+  constructor(private randomNumberService: RandomNumberGeneratorService) { }
 
   ngOnInit(): void {
+    this.getRandomNumberSet(1);
   }
+
+
+  getRandomNumberSet(value:number){
+    this.randomNumberSet = this.randomNumberService.getRandomNumberArray(value);
+  }
+
+
 
 }

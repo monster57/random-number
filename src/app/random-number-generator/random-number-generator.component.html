@@ -1,8 +1,5 @@
 <p>random-number-generator works!</p>
 
-<mat-grid-list cols="4" rowHeight="4:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-  </mat-grid-list>
+<mat-grid-list cols="4 " rowHeight="{{randomNumberSet.length}}:1">
+    <mat-grid-tile *ngFor="let rn of randomNumberSet">{{rn}}</mat-grid-tile>
+</mat-grid-list>
