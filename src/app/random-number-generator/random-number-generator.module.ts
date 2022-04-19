@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RandomNumberGeneratorComponent } from './random-number-generator.component';
 import { RandomNumberGeneratorService } from './random-number-generator.service';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -13,7 +15,9 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    MatSliderModule
+    MatSliderModule,
+    MatGridListModule,
+    FormsModule
   ],
   providers:[
     RandomNumberGeneratorService
