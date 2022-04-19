@@ -1,14 +1,22 @@
 <p>random-number-generator works!</p>
 
-<mat-grid-list cols="4 " rowHeight="{{randomNumberSet.length}}:1">
+
+
+<div *ngIf="viewGrid">
+  <mat-grid-list cols="4 " rowHeight="{{randomNumberSet.length}}:1" >
     <mat-grid-tile *ngFor="let rn of randomNumberSet">{{rn}}</mat-grid-tile>
 </mat-grid-list>
 
-
-
-<div *ngFor = "let item of [].constructor(randomNumberSet.length); let i = index">
-  <input  type="text"   [(ngModel)]="inputFormUser[i]">
+<button (click)="startGuess()">Start Gusseing</button>
 </div>
 
-<button (click)="checkValue()">Check</button>
+<div *ngIf="!viewGrid">
+  <div *ngFor = "let item of [].constructor(randomNumberSet.length); let i = index">
+    <input  type="text"   [(ngModel)]="inputFormUser[i]">
+  </div>
+  
+  <button (click)="checkValue()">Check</button>
+
+</div>
+
 

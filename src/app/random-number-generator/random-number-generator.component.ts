@@ -11,26 +11,34 @@ import { FormControl } from '@angular/forms';
 export class RandomNumberGeneratorComponent implements OnInit {
   randomNumberSet:any = [];
   inputFormUser:any = [];
+  viewGrid: boolean = true;
   constructor(private randomNumberService: RandomNumberGeneratorService) { }
 
   ngOnInit(): void {
-    this.getRandomNumberSet(2);
-    // this.elements = Array(2).fill().map((x,i)=>i); // [0,1,2,3,4]
+    this.getRandomNumberSet(1);
 
   }
 
+  startGuess(): void{
+    this.viewGrid = false;
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
 
   getRandomNumberSet(value:number){
     this.randomNumberSet = this.randomNumberService.getRandomNumberArray(value);
   }
 
   checkValue(){
-    console.log(this.inputFormUser);
-    console.log(this.randomNumberSet);
     if(this.randomNumberService.areArrayEqual(this.inputFormUser , this.randomNumberSet)){
-      alert("this is successfull");
+      this.getRandomNumberSet(this.inputFormUser.length+1);
+      this.inputFormUser = [];
+      this.viewGrid = true;
     }else{
-      alert("this is not successfull");
+      alert("game over");
+      this.refresh();
     }
   }
 
